@@ -23,6 +23,13 @@ typedef struct List{
     int size;
 } List;
 
+void initialize_list(List *list);
+void add_student(List *list, Student student);
+void remove_student(List *list, Student student);
+void print_beginning(List *list);
+void print_end(List *list);
+void free_list(List *list);
+
 
 
 
