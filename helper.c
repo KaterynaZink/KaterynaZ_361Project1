@@ -1,5 +1,8 @@
 #include "helper.h"
 
+#include <stdio.h>
+#include <stdlib.h>
+
 void initialize_list(List *list){
     list->head = NULL;
     list->tail= NULL;
@@ -69,5 +72,6 @@ void print_end(const List *list){
 }
 
 void free_list(List *list){
+
 
 }
