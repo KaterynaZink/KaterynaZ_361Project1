@@ -9,6 +9,13 @@ typedef struct Node{
     struct Node* prev;
 } Node;
 
+typedef struct Student{
+    char *lastname;
+    char *firstname;
+    long int student_id;
+    char *year;
+    int expected_graduation;
+} Student;
 
 
 
@@ -19,5 +26,4 @@ typedef struct Node{
 
 
 
-
-#endif // helper_h
+#endif //helper_h
