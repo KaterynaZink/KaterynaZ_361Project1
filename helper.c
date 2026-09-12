@@ -25,12 +25,25 @@ void add_student(List *list, Student student){
 
 void remove_student(List *list, Student student){
 
-}
-void print_beginning(const List *list){
 
+
+}
+
+void print_beginning(const List *list){
+    Node *current = list->head;
+
+    while(current != NULL){
+        printf("First Name: %s, Last Name: %s\n", current->student_data.firstname, current->student_data.lastname);
+        current = current->next;
+    }
 }
 void print_end(const List *list){
+    Node *current = list->tail;
 
+    while(current != NULL){
+        printf("First Name: %s, Last Name: %s\n", current->student_data.firstname, current->student_data.lastname);
+        current= current->prev;
+    }
 }
 void free_list(List *list){
 
