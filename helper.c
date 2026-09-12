@@ -7,7 +7,7 @@ void initialize_list(List *list){
 }
 
 void add_student(List *list, Student student){
-    Node *new_node = (Node *)malloc(sizeof(Node));
+    Node *new_node = (Node *)malloc(sizeof(Node)); //
     
     new_node->student_data= student;
     new_node->next = NULL;
@@ -23,11 +23,32 @@ void add_student(List *list, Student student){
     list->size++;
 }
 
-void remove_student(List *list, Student student){
-
-
-
+void remove_student(List *list, const char *lastname){
+    Node *current = list->head;
+   
+    while(current != NULL){
+        Node *next_node= current->next;
+   
+        if(strcmp(current->student_data.lastname, lastname)==0){
+            if(current->prev !=NULL){
+                current->prev->next= current->next;
+            }
+            else{
+                list->head= current->next;
+            }
+            if(current->next != NULL){
+                current->next->prev= current->prev;
+            }
+            else{
+                list->tail= current->prev;
+            }
+        }
+        free(current);
+        list->size--;
+    }
+    current= current->next;
 }
+
 
 void print_beginning(const List *list){
     Node *current = list->head;
@@ -37,6 +58,7 @@ void print_beginning(const List *list){
         current = current->next;
     }
 }
+
 void print_end(const List *list){
     Node *current = list->tail;
 
@@ -45,6 +67,7 @@ void print_end(const List *list){
         current= current->prev;
     }
 }
+
 void free_list(List *list){
 
 }
