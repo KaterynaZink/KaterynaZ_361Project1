@@ -10,7 +10,7 @@ void add_student(List *list, Student student){
     Node *new_node = (Node *)malloc(sizeof(Node)); //
     
     new_node->student_data= student;
-    new_node->next = NULL;
+    new_node->next= NULL;
     new_node->prev =list->tail;
 
     if(list->tail ==NULL){
