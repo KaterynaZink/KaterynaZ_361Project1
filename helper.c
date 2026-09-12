@@ -72,6 +72,7 @@ void print_end(const List *list){
 }
 
 void free_list(List *list){
-
-
+    Node *current= list->head;
+    while(current != NULL){
+        
 }
