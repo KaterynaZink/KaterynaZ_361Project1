@@ -9,7 +9,6 @@ void initialize_list(List *list){
     list->tail= NULL;
     list->size= 0;
 }
-
 void add_student(List *list, Student student){
     Node *new_node = (Node *)malloc(sizeof(Node)); //
     
@@ -46,11 +45,14 @@ void remove_student(List *list, const char *lastname){
             else{
                 list->tail= current->prev;
             }
+            free(current->student_data.firstname);
+            free(current->student_data.lastname);
+            free(current->student_data.year);
+            free(current);
+            list->size--;
         }
-        free(current);
-        list->size--;
+        current= current->next;
     }
-    current= current->next;
 }
 
 
