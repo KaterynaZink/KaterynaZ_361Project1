@@ -7,7 +7,14 @@
 #define BUFFERSIZE 128
 
 
-int main(int argc, char *argv[]) {
+
+int main(void) {
     char buffer[BUFFERSIZE];
+
+    List student_list;
+    Student student;
+
+
+
 
 }
