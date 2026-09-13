@@ -30,8 +30,11 @@ int main(void) {
         strcpy(student.lastname, buffer);
     }
 
-
     printf("Enter a year: ");
+    if(fgets(buffer, BUFFERSIZE, stdin) != NULL){
+
+        buffer[strcpyn(buffer, "\n")]= '\0';
+    }
 
 
 
