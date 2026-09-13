@@ -22,10 +22,13 @@ int main(void) {
         strcpy(student.firstname, buffer);
     }
 
-
     printf("Enter a last name: ");
+    if( fgets(buffer, BUFFERSIZE, stdin) != NULL){
 
-
+        buffer[strcspn(buffer, "\n")]= '\0';
+        student.lastname= malloc(strlen(buffer)+1);
+        strcpy(student.lastname, buffer);
+    }
 
 
     printf("Enter a year: ");
