@@ -60,7 +60,7 @@ int main(void) {
         fgets(buffer,BUFFERSIZE, stdin);
         student.expected_graduation= strtol(buffer,NULL,10);
 
-        add_student(&student_list, student);
+        add_student(&student_list,student);
     }
 
     else if(choice ==2){
