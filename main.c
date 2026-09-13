@@ -30,13 +30,46 @@ int main(void) {
     }
 
     if(choice == 1){
+        printf("Enter a first name: ");
+        if (fgets(buffer, BUFFERSIZE, stdin) != NULL){
+        buffer[strcspn(buffer, "\n")]= '\0';
+        student.firstname= malloc(strlen(buffer)+1);
+        strcpy(student.firstname, buffer);
+    }
+
+        printf("Enter a last name: ");
+        if( fgets(buffer, BUFFERSIZE, stdin) != NULL){
+        buffer[strcspn(buffer, "\n")]= '\0';
+        student.lastname= malloc(strlen(buffer)+1);
+        strcpy(student.lastname, buffer);
+    }
+
+        printf("Enter student's year (freshmen, sophomore, etc.): ");
+        if(fgets(buffer, BUFFERSIZE, stdin) != NULL){
+        buffer[strcspn(buffer, "\n")]= '\0';
+        student.year = malloc(strlen(buffer)+ 1);
+        strcpy(student.year, buffer);
+    }
+
+        printf("Enter student's ID: ");
+        fgets(buffer, BUFFERSIZE, stdin);
+        student.student_id= strtol(buffer, NULL,10);
 
 
+        printf("Enter expected graduation year: ");
+        fgets(buffer,BUFFERSIZE, stdin);
+        student.expected_graduation= strtol(buffer,NULL,10);
+
+        add_student(&student_list, student);
     }
 
     else if(choice ==2){
-
+        printf("Enter a last name: ");
+        if( fgets(buffer, BUFFERSIZE, stdin) != NULL){
+            buffer[strcspn(buffer, "\n")]= '\0';
+            remove_student(&student_list, buffer);
     }
+ }
 
     else if(choice ==3){
         print_beginning(&student_list);
@@ -54,40 +87,6 @@ int main(void) {
         printf("Pick another choice\n");
     }
 
-    printf("Enter a first name: ");
-    if (fgets(buffer, BUFFERSIZE, stdin) != NULL){
-
-        buffer[strcspn(buffer, "\n")]= '\0';
-        student.firstname= malloc(strlen(buffer)+1);
-        strcpy(student.firstname, buffer);
-    }
-
-    printf("Enter a last name: ");
-    if( fgets(buffer, BUFFERSIZE, stdin) != NULL){
-
-        buffer[strcspn(buffer, "\n")]= '\0';
-        student.lastname= malloc(strlen(buffer)+1);
-        strcpy(student.lastname, buffer);
-    }
-
-    printf("Enter student's year (freshmen, sophomore, etc.): ");
-    if(fgets(buffer, BUFFERSIZE, stdin) != NULL){
-
-        buffer[strcspn(buffer, "\n")]= '\0';
-        student.year = malloc(strlen(buffer)+ 1);
-        strcpy(student.year, buffer);
-    }
-
-    printf("Enter student's ID: ");
-    fgets(buffer, BUFFERSIZE, stdin);
-    student.student_id= strtol(buffer, NULL,10);
-
-
-    printf("Enter expected graduation year: ");
-    fgets(buffer,BUFFERSIZE, stdin);
-    student.expected_graduation= strtol(buffer,NULL,10);
-
-    add_student(&student_list, student);
     free_list(&student_list);
 
 
