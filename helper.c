@@ -75,7 +75,14 @@ void free_list(List *list){
     Node *current= list->head;
     while(current != NULL){
         Node *new_node= current->next;
+        free(current->student_data.firstname);
+        free(current->student_data.lastname);
+        free(current->student_data.year);
         free(current);
         current= new_node;
     }
+
+    list->head=NULL;
+    list->tail=NULL;
+    list->size=0;
 }
