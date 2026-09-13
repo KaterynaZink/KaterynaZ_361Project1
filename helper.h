@@ -6,8 +6,8 @@
 typedef struct Student{
     char *lastname;
     char *firstname;
-    long int student_id;
     char *year;
+    long int student_id;
     int expected_graduation;
 } Student;
 
