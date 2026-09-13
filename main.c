@@ -31,16 +31,21 @@ int main(void) {
 
     if(choice == 1){
 
+
     }
+
     else if(choice ==2){
 
     }
+
     else if(choice ==3){
-
+        print_beginning(&student_list);
     }
+
     else if(choice ==4){
-
+        print_end(&student_list);
     }
+
     else if(choice==5){
         printf("Exited program\n");
         free_list(&student_list);
