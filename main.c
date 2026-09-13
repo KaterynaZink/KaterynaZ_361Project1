@@ -16,7 +16,7 @@ int main(void) {
 
     initialize_list(&student_list);
 
-    int choice;
+    int choice=0;
     while(choice != 5){
         printf("1. Add a student\n");
         printf("2. Remove a student\n");
