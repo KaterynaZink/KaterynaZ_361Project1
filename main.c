@@ -30,10 +30,12 @@ int main(void) {
         strcpy(student.lastname, buffer);
     }
 
-    printf("Enter a year: ");
+    printf("Enter student's year (freshmen, sophomore, etc.): ");
     if(fgets(buffer, BUFFERSIZE, stdin) != NULL){
 
-        buffer[strcpyn(buffer, "\n")]= '\0';
+        buffer[strcspn(buffer, "\n")]= '\0';
+        student.year = malloc(strlen(buffer)+ 1);
+        strcpy(student.year, buffer);
     }
 
 
