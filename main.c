@@ -14,20 +14,40 @@ int main(void) {
     List student_list;
     Student student;
 
-    int choice;
+    initialize_list(&student_list);
 
+    int choice;
     while(choice != 5){
-        printf("1. Add a student");
-        printf("2. Remove a student");
-        printf("3. Print students from beginning");
-        printf("4. Print students from end");
-        printf("5. Exit");
+        printf("1. Add a student\n");
+        printf("2. Remove a student\n");
+        printf("3. Print students from beginning\n");
+        printf("4. Print students from end\n");
+        printf("5. Exit\n");
         printf("Enter choice: ");
-        
+
         fgets(buffer, BUFFERSIZE, stdin);
         choice= strtol(buffer, NULL,10);
     }
-    initialize_list(&student_list);
+
+    if(choice == 1){
+
+    }
+    else if(choice ==2){
+
+    }
+    else if(choice ==3){
+
+    }
+    else if(choice ==4){
+
+    }
+    else if(choice==5){
+        printf("Exited program\n");
+        free_list(&student_list);
+    }
+    else{
+        printf("Pick another choice\n");
+    }
 
     printf("Enter a first name: ");
     if (fgets(buffer, BUFFERSIZE, stdin) != NULL){
