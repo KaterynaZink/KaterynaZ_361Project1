@@ -15,7 +15,7 @@ typedef struct Node{
     Student student_data;
     struct Node* next;
     struct Node* prev;
-} Node;
+} Node; 
 
 typedef struct List{
     Node *head;
