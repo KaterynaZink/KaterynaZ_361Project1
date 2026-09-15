@@ -10,7 +10,7 @@ void initialize_list(List *list){
     list->size= 0;
 }
 void add_student(List *list, Student student){
-    Node *new_node = (Node *)malloc(sizeof(Node)); //
+    Node *new_node = (Node *)malloc(sizeof(Node)); //This line was assisted by Copilot. Prompt:"How do I allocate memory for a new node in C?"
     
     new_node->student_data= student;
     new_node->next= NULL;
@@ -32,7 +32,7 @@ void remove_student(List *list, const char *lastname){
     while(current != NULL){
         Node *next_node= current->next;
    
-        if(strcmp(current->student_data.lastname, lastname)==0){
+        if(strcmp(current->student_data.lastname, lastname)==0){ //This line was assisted by Copilot. Prompt: "How do I compare two strings in C?"
             if(current->prev !=NULL){
                 current->prev->next= current->next;
             }
