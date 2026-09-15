@@ -3,7 +3,7 @@ CFLAGS = -Wall -Werror -g
 
 slist: main.o helper.o
 
-	$(CC) $(CFLAGS) -o slist main.o helper.o //Assisted by Copilot. Prompt: "How to compile main.o and helper.o into an executable named slist using gcc with flags"
+	$(CC) $(CFLAGS) -o slist main.o helper.o 
 
 main.o: main.c helper.h
 	$(CC) $(CFLAGS) -c main.c
