@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define BUFFERSIZE 128
+#define BUFFERSIZE 128 //This line was referenced from Canvas to get a good Buffer Size for input
 
 int main(void) {
     char buffer[BUFFERSIZE];
@@ -24,14 +24,14 @@ int main(void) {
         printf("Enter choice: ");
 
         fgets(buffer, BUFFERSIZE, stdin);
-        choice= strtol(buffer, NULL,10);
+        choice= strtol(buffer, NULL,10); 
 
         if(choice == 1){
             printf("Enter a first name: ");
             if (fgets(buffer, BUFFERSIZE, stdin) != NULL){
-            buffer[strcspn(buffer, "\n")]= '\0';
-            student.firstname= malloc(strlen(buffer)+1);
-            strcpy(student.firstname, buffer);
+            buffer[strcspn(buffer, "\n")]= '\0'; 
+            student.firstname= malloc(strlen(buffer)+1); //This line was assisted by Copilot. Prompt: "How do I allocate enough memory for a string in C?"
+            strcpy(student.firstname, buffer); 
             }
 
             printf("Enter a last name: ");
