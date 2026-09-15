@@ -1,8 +1,5 @@
 #include "helper.h"
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 
 
 /* Function to initiliaze the list before using it*/

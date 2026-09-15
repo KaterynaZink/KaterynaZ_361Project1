@@ -1,8 +1,5 @@
 #include "helper.h"
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 
 #define BUFFERSIZE 128 //This line was referenced from Canvas to get a good Buffer Size for input
 
