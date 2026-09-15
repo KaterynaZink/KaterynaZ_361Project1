@@ -6,6 +6,9 @@
 
 #define BUFFERSIZE 128 //This line was referenced from Canvas to get a good Buffer Size for input
 
+
+
+/*main function that asks the user for input*/
 int main(void) {
     char buffer[BUFFERSIZE];
 
@@ -28,7 +31,7 @@ int main(void) {
 
         if(choice == 1){
             printf("Enter a first name: ");
-            if (fgets(buffer, BUFFERSIZE, stdin) != NULL){
+            if (fgets(buffer, BUFFERSIZE, stdin) != NULL){ //This line was assisted by Copilot. Prompt: "How do I read a line of input in C by using fgets()?"
             buffer[strcspn(buffer, "\n")]= '\0'; 
             student.firstname= malloc(strlen(buffer)+1); //This line was assisted by Copilot. Prompt: "How do I allocate enough memory for a string in C?"
             strcpy(student.firstname, buffer); 
@@ -84,7 +87,7 @@ int main(void) {
         }
 
     }
-    free_list(&student_list);
+    free_list(&student_list); //The memory is freed at the end of the program so there's no memory leaks
     return 0;
 }
 
