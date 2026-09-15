@@ -66,7 +66,7 @@ void print_beginning(const List *list){
     Node *current = list->head;
 
     while(current != NULL){
-        printf("First Name: %s, Last Name: %s\n, Year: %s\n, ID: %ld\n, Expected Graduation: %d\n", current->student_data.firstname, current->student_data.lastname, current->student_data.year, current->student_data.student_id, current->student_data.expected_graduation);
+        printf("First Name: %s, Last Name: %s, Year: %s, ID: %ld, Expected Graduation: %d\n", current->student_data.firstname, current->student_data.lastname, current->student_data.year, current->student_data.student_id, current->student_data.expected_graduation);
         current = current->next;
     }
 }
@@ -76,7 +76,7 @@ void print_end(const List *list){
     Node *current = list->tail;
 
     while(current != NULL){
-        printf("First Name: %s, Last Name: %s\n, Year: %s\n, ID: %ld\n, Expected Graduation: %d\n", current->student_data.firstname, current->student_data.lastname, current->student_data.year, current->student_data.student_id, current->student_data.expected_graduation);
+        printf("First Name: %s, Last Name: %s, Year: %s, ID: %ld, Expected Graduation: %d\n", current->student_data.firstname, current->student_data.lastname, current->student_data.year, current->student_data.student_id, current->student_data.expected_graduation);
         current= current->prev;
     }
 }
