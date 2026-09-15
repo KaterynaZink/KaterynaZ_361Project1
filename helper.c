@@ -4,11 +4,16 @@
 #include <stdlib.h>
 #include <string.h>
 
+
+/* Function to initiliaze the list before using it*/
 void initialize_list(List *list){
     list->head = NULL;
     list->tail= NULL;
     list->size= 0;
 }
+
+
+/*Function that adds a student to the list by creating a new node and asking the user for student information*/
 void add_student(List *list, Student student){
     Node *new_node = (Node *)malloc(sizeof(Node)); //This line was assisted by Copilot. Prompt:"How do I allocate memory for a new node in C?"
     
@@ -26,6 +31,7 @@ void add_student(List *list, Student student){
     list->size++;
 }
 
+/*Function that removes a student from the list by last name. The function links the previous and next nodes*/
 void remove_student(List *list, const char *lastname){
     Node *current = list->head;
    
@@ -55,7 +61,7 @@ void remove_student(List *list, const char *lastname){
     }
 }
 
-
+/*Function that prints all the students and their information starting from the beginning of the list*/
 void print_beginning(const List *list){
     Node *current = list->head;
 
@@ -65,6 +71,7 @@ void print_beginning(const List *list){
     }
 }
 
+/*Function that prints all the students and their information starting from the end of the list*/
 void print_end(const List *list){
     Node *current = list->tail;
 
@@ -74,6 +81,7 @@ void print_end(const List *list){
     }
 }
 
+/*Function that frees all the memory that was allocated for the list and specific strings such as first name, last name, and year as well as the nodes*/
 void free_list(List *list){
     Node *current= list->head;
     while(current != NULL){
