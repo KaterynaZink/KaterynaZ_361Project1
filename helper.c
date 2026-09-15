@@ -14,6 +14,11 @@ void initialize_list(List *list){
 void add_student(List *list, Student student){
     Node *new_node = (Node *)malloc(sizeof(Node)); //This line was assisted by Copilot. Prompt:"How do I allocate memory for a new node in C?"
     
+    if(new_node == NULL){ //This line was assisted by Copilot. Prompt: "How do I check if memory allocation failed in C?"
+        printf("Memory allocation failed");
+        return;
+    }
+
     new_node->student_data= student;
     new_node->next= NULL;
     new_node->prev =list->tail;
