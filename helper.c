@@ -77,12 +77,12 @@ void print_end(const List *list){
 void free_list(List *list){
     Node *current= list->head;
     while(current != NULL){
-        Node *new_node= current->next;
-        free(current->student_data.firstname);
+        Node *new_node= current->next; 
+        free(current->student_data.firstname);  
         free(current->student_data.lastname);
         free(current->student_data.year);
-        free(current);
-        current= new_node;
+        free(current); 
+        current= new_node; 
     }
 
     list->head=NULL;
